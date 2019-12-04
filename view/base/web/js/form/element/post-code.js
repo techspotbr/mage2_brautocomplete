@@ -10,9 +10,8 @@ define([
     'uiRegistry',
     'mage/url',
     'Magento_Ui/js/form/element/abstract',
-    'inputMask',
     'mage/translate'
-], function ($, _, registry, urlBuilder, Abstract, inputMask, i18n) {
+], function ($, _, registry, urlBuilder, Abstract, i18n) {
     'use strict';
 
     return Abstract.extend({
@@ -21,7 +20,6 @@ define([
                 update: '${ $.parentName }.country_id:value'
             }
         },
-
         /**
          * @param {String} value
          */
