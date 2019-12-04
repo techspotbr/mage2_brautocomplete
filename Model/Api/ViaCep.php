@@ -48,8 +48,10 @@ class ViaCep
 
             if($response->getStatusCode() == 200){
                 $result             = $this->jsonHelper->jsonDecode($result);
-                $result['code']     = $response->getStatusCode();
-                $result['region_id'] = $this->getRegionIdByCode($result['uf']);
+                if(!isset($result['erro'])){
+                    $result['code']     = $response->getStatusCode();
+                    $result['region_id'] = $this->getRegionIdByCode($result['uf']);
+                }
             } else {
                 $result = array();
                 $result['code']     = $response->getStatusCode();

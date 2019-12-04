@@ -70,9 +70,13 @@ define([
                         postcode: value
                     },
                     complete: function(response) {
-                        var errorMsg;
+                        var errorMsg = i18n("Can't autocomplete address:");
                         var data = response.responseJSON;
-                        if(data.code === 200){
+                        if(!data){
+                            console.log(errorMsg + 'undefined!');
+                            return;
+                        }
+                        if(data.code === 200 && !data.erro){
                             $('input[name="postcode"]').trigger('change');
                             $('input[name="street[0]"]').val(data.logradouro).trigger('change');
                             $('input[name="street[2]"]').val(data.complemento).trigger('change');
@@ -82,12 +86,15 @@ define([
                             $('input[name="street[1]"]').focus();
                         } else {
                             $('input[name="street[0]"]').focus();
-                            errorMsg = i18n("Can't autocomplete address:");
-                            console.log(errorMsg + data);
+                            console.log(errorMsg);
+                            if(data.erro){
+                                console.log('ViaCep Api error response = ' + data.erro);
+                            }
                         }
+                        return;
                     },
                     error: function (xhr, status, errorThrown) {
-                        errorMsg = i18n("Can't autocomplete address:");
+                        var errorMsg = i18n("Can't autocomplete address:");
                         console.log(errorMsg + status);
                         return;
                     }
