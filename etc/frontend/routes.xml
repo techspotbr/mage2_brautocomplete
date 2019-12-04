@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * The Tech Spot Br Auto Complete module is a comercial module
+ * Copyright (C) 2019  Tech Spot 
+ * 
+ * This file is part of Techspot/BrAutocomplete.
+ * 
+ * Techspot/BrAutocomplete is  a Not For Resale (NFR) software.
+ * 
+ * You should have received a copy of the Not For Resale (NFR) License
+ * along with this program.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
+    <router id="standard">
+        <route id="brautocomplete" frontName="brautocomplete">
+            <module name="Techspot_BrAutocomplete"/>
+        </route>
+    </router>
+</config>

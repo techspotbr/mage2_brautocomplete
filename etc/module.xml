@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * The Tech Spot Br Autocomplete for Magento 2 enables autocomplete address fields when postcode (CEP) is input
+ * Copyright (C) 2018  Tech Spot 
+ * 
+ * This file is part of Techspot/BrAutocomplete.
+ * 
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	<module name="Techspot_BrAutocomplete" setup_version="1.0.1">
+		<sequence>
+            <module name="Magento_Checkout"/>
+            <module name="Magento_Customer"/>
+            <module name="Magento_CustomerCustomAttributes"/>
+        </sequence>
+	</module>
+</config>
