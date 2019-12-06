@@ -60,7 +60,7 @@ define([
          * @returns {Object} Chainable.
          */
         initConfig: function () {
-            console.log('load from BrAutocomplete - email.js');
+            console.log('Module BrAucocomplete: email loaded.');
             this._super();
             this.isPasswordVisible = this.resolveInitialPasswordVisibility();
             return this;
@@ -112,11 +112,11 @@ define([
 
             $.when(this.isEmailCheckComplete).done(function () {
                 this.isPasswordVisible(false);
-                console.log('Debug: New customer, show Address Form!');
-                console.log('call: this.canShowAddressForm()');
+                console.log('Module BrAutocomplete: New customer, show Address Form!');
+                console.log('Module BrAutocomplete: call-> canShowAddressForm()');
                 this.canShowAddressForm();
             }.bind(this)).fail(function () {
-                console.log('Debug: Customer already register! show login Form!');
+                console.log('Module BrAutocomplete: Customer already register! show login Form!');
                 this.isPasswordVisible(true);
                 checkoutData.setCheckedEmailValue(this.email());
             }.bind(this)).always(function () {
