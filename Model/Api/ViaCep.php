@@ -51,6 +51,12 @@ class ViaCep
                 if(!isset($result['erro'])){
                     $result['code']     = $response->getStatusCode();
                     $result['region_id'] = $this->getRegionIdByCode($result['uf']);
+                } else {
+                    $result['logradouro'] = "";
+                    $result['complemento'] = "";
+                    $result['bairro'] = "";
+                    $result['localidade'] = "";
+                    $result['region_id'] = "0";
                 }
             } else {
                 $result = array();
