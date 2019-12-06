@@ -112,11 +112,11 @@ define([
 
             $.when(this.isEmailCheckComplete).done(function () {
                 this.isPasswordVisible(false);
-                console.log('Module BrAutocomplete: New customer, show Address Form!');
-                console.log('Module BrAutocomplete: call-> canShowAddressForm()');
+                console.log('BrAutocomplete Module: New customer, show Address Form!');
+                console.log('BrAutocomplete Module: call-> canShowAddressForm()');
                 this.canShowAddressForm();
             }.bind(this)).fail(function () {
-                console.log('Module BrAutocomplete: Customer already register! show login Form!');
+                console.log('BrAutocomplete Module: Customer already register! show login Form!');
                 this.isPasswordVisible(true);
                 checkoutData.setCheckedEmailValue(this.email());
             }.bind(this)).always(function () {
