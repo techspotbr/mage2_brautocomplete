@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="customer-email" xsi:type="array">
+                                                            <item name="component" xsi:type="string">Techspot_BrAutocomplete/js/view/form/element/email</item>
+                                                            <item name="displayArea" xsi:type="string">customer-email</item>
+                                                            <item name="tooltip" xsi:type="array">
+                                                                <item name="description" xsi:type="string" translate="true">We'll send your order confirmation here.</item>
+                                                            </item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="before-login-form" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">uiComponent</item>
+                                                                    <item name="displayArea" xsi:type="string">before-login-form</item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <!-- before login form fields -->
+                                                                    </item>
+                                                                </item>
+                                                                <item name="additional-login-form-fields" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">uiComponent</item>
+                                                                    <item name="displayArea" xsi:type="string">additional-login-form-fields</item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <!-- additional login form fields -->
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="before-form" xsi:type="array">
+                                                            <!-- Magework: Hide Address Form after load - Very important! -->
+                                                            <item name="component" xsi:type="string">Techspot_BrAutocomplete/js/form/component/after-address</item>
+                                                        </item>
+                                                        <item name="shipping-address-fieldset" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="firstname" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">10</item>
+                                                                </item>
+                                                                <item name="lastname" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">20</item>
+                                                                </item>
+                                                                <item name="telephone" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">30</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="inputMask" xsi:type="array">
+                                                                            <item name="mask" xsi:type="string">(00) 0000-0000</item>
+                                                                        </item>
+                                                                        <item name="tooltip" xsi:type="array">
+                                                                            <item name="description" xsi:type="string" translate="true">For delivery questions</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="cellphone" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">40</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="inputMask" xsi:type="array">
+                                                                            <item name="mask" xsi:type="string">(00) 00000-0000</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <!-- Magework: Custom Postcode with Techspot_AutoComplete - Very important! -->
+                                                                <item name="postcode" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Techspot_BrAutocomplete/js/form/element/post-code</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="inputMask" xsi:type="array">
+                                                                            <item name="mask" xsi:type="string">00000-000</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                        <item name="min_text_length" xsi:type="string">9</item>
+                                                                        <item name="max_text_length" xsi:type="string">9</item>
+                                                                        <item name="required-entry" xsi:type="boolean">true</item>
+                                                                    </item>
+                                                                    <item name="sortOrder" xsi:type="string">40</item>
+                                                                </item><!-- end item name: postcode-->
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
