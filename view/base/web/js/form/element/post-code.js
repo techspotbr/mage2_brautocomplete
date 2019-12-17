@@ -67,7 +67,9 @@ define([
                 $('fieldset.street').hide();
                 $('div[name="shippingAddress.city"]').hide();
                 $('div[name="shippingAddress.region_id"]').hide();
-                $('#opc-shipping_method').hide();
+                if(!customer.isLoggedIn()){
+                    $('#opc-shipping_method').hide();
+                }
             } else {
                 $('#opc-shipping_method').show();
             }
@@ -178,6 +180,7 @@ define([
                             "city" : {type : 'input', value: data.localidade },
                             "region_id": {type : 'select', value: data.region_id }
                         }
+                        $('input[name="street[1]"]').val("").trigger('change');
                         $.each( fieldsMap, function( k, v ) {
                             $(''+v.type+'[name="'+k+'"]').val(v.value).trigger('change');
                         });
