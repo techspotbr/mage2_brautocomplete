@@ -60,9 +60,6 @@
                                                                         <item name="inputMask" xsi:type="array">
                                                                             <item name="mask" xsi:type="string">(00) 0000-0000</item>
                                                                         </item>
-                                                                        <item name="tooltip" xsi:type="array">
-                                                                            <item name="description" xsi:type="string" translate="true">For delivery questions</item>
-                                                                        </item>
                                                                     </item>
                                                                 </item>
                                                                 <item name="cellphone" xsi:type="array">

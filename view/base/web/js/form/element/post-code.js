@@ -62,16 +62,19 @@ define([
             }
         },
         hideAddressFields: function (){
-            var value = this.value();
-            if(value.length != 9){
-                $('fieldset.street').hide();
-                $('div[name="shippingAddress.city"]').hide();
-                $('div[name="shippingAddress.region_id"]').hide();
-                if(!customer.isLoggedIn()){
-                    $('#opc-shipping_method').hide();
+            if($('.checkout-shipping-address').is(":visible")){
+                var value = this.value();
+                if(value.length != 9){
+                    $('fieldset.street').hide();
+                    $('div[name="shippingAddress.city"]').hide();
+                    $('div[name="shippingAddress.region_id"]').hide();
+                    if(!customer.isLoggedIn()){
+                        $('#opc-shipping_method').hide();
+                    }
+                } else {
+                    $('#opc-shipping_method').show();
+                    console.log('show shipping method!!');
                 }
-            } else {
-                $('#opc-shipping_method').show();
             }
         },
         hideAllForm: function (){
