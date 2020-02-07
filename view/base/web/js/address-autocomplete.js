@@ -9,8 +9,8 @@ require(['Magento_Ui/js/modal/alert','jquery', 'mage/mage', 'inputMask', 'mage/u
             var postcodeErrorMessage = $.mage.__("We can't find the address, you can fill it in manually ...");
 
             var addressFormMask = {
-                ".telephone" : { type : 'input', mask: '(99) 99999-9999', initVisible: 'visible', autocomplete: false},
-                ".cellphone" : { type : 'input', mask: '(99) 9999-9999' , initVisible: 'visible', autocomplete: false},
+                ".telephone" : { type : 'input', mask: '(99) 9999-9999', initVisible: 'visible', autocomplete: false},
+                ".cellphone" : { type : 'input', mask: '(99) 99999-9999' , initVisible: 'visible', autocomplete: false},
                 ".zip" : { type : 'input', mask: '99999-999', initVisible: 'visible', autocomplete: false},
                 ".street-1": { type : 'input', mask: false, initVisible: 'hidden', autocomplete: true, addressData_key: 'logradouro'},
                 ".street-2": { type : 'input', mask: false, initVisible: 'hidden', autocomplete: false},
@@ -93,6 +93,7 @@ require(['Magento_Ui/js/modal/alert','jquery', 'mage/mage', 'inputMask', 'mage/u
                     $('#postcode-error').html(postcodeErrorMessage);
                     console.log('VIA CEP: Endereço não localizado');
                 }
+                $('.street-1').find('input').focus();
             }
         }
     );
