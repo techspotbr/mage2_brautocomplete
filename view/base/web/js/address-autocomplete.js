@@ -82,6 +82,7 @@ require(['Magento_Ui/js/modal/alert','jquery', 'mage/mage', 'inputMask', 'mage/u
                         }
                         $(k).show();
                     });
+                    $('.street-2').find('input').focus();
                 } else {
                     $.each(addressFormMask, function( k, v ) {
                         $(k).show();
@@ -91,9 +92,10 @@ require(['Magento_Ui/js/modal/alert','jquery', 'mage/mage', 'inputMask', 'mage/u
                         postcode.parent().append(postcodeErrorDiv);
                     }
                     $('#postcode-error').html(postcodeErrorMessage);
+                    $('.street-1').find('input').focus();
                     console.log('VIA CEP: Endereço não localizado');
                 }
-                $('.street-1').find('input').focus();
+               
             }
         }
     );
